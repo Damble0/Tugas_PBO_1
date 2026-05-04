@@ -1,5 +1,5 @@
 public class Pasien {
-    String nama;
+    private String nama;
 
     public Pasien(String nama){
       this.nama = nama;
