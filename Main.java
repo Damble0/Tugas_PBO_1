@@ -1,17 +1,29 @@
+
+import java.util.*;
+
 public class Main {
     public static void main(String[] args) {
-        Pasien pasien1 = new Pasien("Agus");
+        List<Dokter> jmldokter = new ArrayList<>();
 
-        Dokter dokter1 = new Dokter("Dr. Ma'ruf");
-        Dokter dokter2 = new Dokter("Dr. Amin");
-        Dokter dokter3 = new Dokter("Dr. Pindo");
+        Dokter d1 = new Dokter("Dr. Ma'ruf");
+        Dokter d2 = new Dokter("Dr. Amin");
+        Dokter d3 = new Dokter("Dr. Pindo");
 
-        Dokter[] daftarDokter = {dokter1, dokter2, dokter3};
+        jmldokter.add(d1);
+        jmldokter.add(d2);
+        jmldokter.add(d3);
 
-        Klinik klinik = new Klinik(daftarDokter);
+        Pasien ps1 = new Pasien("rifky");
+        Pasien ps2 = new Pasien("maalik");
+        Pasien ps3 = new Pasien("annan");
+        
 
-        for (Dokter dokter : klinik.getDokter()) {
-            dokter.periksaPasien(pasien1);
-        }
+        Klinik klk = new Klinik(3, jmldokter);
+
+        d1.periksaPasien(ps1);
+        System.out.println("\n");
+        d2.periksaPasien(ps2);
+        System.out.println("\n");
+        d3.periksaPasien(ps3);
     }
 }

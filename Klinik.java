@@ -1,20 +1,21 @@
-public class Klinik {
-    private Ruangan[] ruangan;
-    private Dokter[] dokter;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Klinik(Dokter[] dokter) {
+public class Klinik {
+    private List<Ruangan> ruangan;
+    private List<Dokter> dokter;
+
+    public Klinik(int jumlah, List<Dokter> dokter) {
         this.dokter = dokter;
-        this.ruangan = new Ruangan[dokter.length];
-        for (int i = 0; i < dokter.length; i++) {
-            this.ruangan[i] = new Ruangan(i + 1);
+        ruangan = new ArrayList<>();
+
+
+        for (int i = 0 ; i < jumlah; i++){
+            ruangan.add(new Ruangan(i+1));
         }
     }
-
-    public Ruangan[] getRuangan() {
+    public List<Ruangan> getRuangan() {
         return ruangan;
     }
 
-    public Dokter[] getDokter() {
-        return dokter;
-    }
 }
